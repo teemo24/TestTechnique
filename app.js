@@ -20,11 +20,10 @@ if(args.length == 3){ // Checking if there's only 3 arguments eg: node [1] app.j
                 data.forEach((country) => { // loop through countries
 
                     new_peoples = []; // in each iteration we reset people and animals arrays
-                    new_animals = []; 
-
                     v = false; // v to make sure not returning empty array
-
+                    
                     country.people.forEach((people)=>{
+                        new_animals = []; 
                         people.animals.forEach((animal)=>{
                             if(animal.name.includes(query)){ // checking if animal name contains the query word
                                 new_animals.push({"name":animal.name}); 
